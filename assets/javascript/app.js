@@ -1,0 +1,150 @@
+/*=============== SHOW MENU ===============*/
+const navMenu = document.getElementById('nav-menu'),
+    navToggle = document.getElementById('nav-toggle'),
+    navClose = document.getElementById('nav-close')
+
+
+
+/* SHOW MENU*/
+
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.add('show-menu')
+    })
+}
+
+
+/* HIDE MENU*/
+
+if (navClose) {
+    navClose.addEventListener('click', () => {
+        navMenu.classList.remove('show-menu')
+    })
+}
+
+/*=============== REMOVE MENU MOBILE ===============*/
+const navLink = document.querySelectorAll('.nav-link')
+
+
+const linkAction = () => {
+    const navMenu = document.getElementById('nav-menu')
+    //  when we click on each nav-link, we remove the show-menu class
+    navMenu.classList.remove('show-menu')
+}
+
+navLink.forEach(n => n.addEventListener('click', linkAction))
+
+/*=============== ADD SHADOW HEADER ===============*/
+const shadowHeader = () => {
+    const header = document.getElementById('header')
+    // add a class if the bottom of the offset is greater than 50 of the viewport height
+
+    this.scrollY >= 50 ? header.classList.add('shadow-header')
+        : header.classList.remove('shadow-header')
+}
+
+window.addEventListener('scroll', shadowHeader)
+
+
+/*=============== SWIPER TESTIMONIAL ===============*/
+
+const swiperTestimonial = new Swiper('.testimonial-swiper', {
+    loop: true,
+    spaceBetween: 32,
+    GrabCursor: true,
+
+    pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+        clickable: true,
+    },
+})
+
+
+
+/*=============== FAQ ACCORDION ===============*/
+const accordionItems = document.querySelectorAll('.faq-accordion-item')
+
+accordionItems.forEach((item) => {
+    const accordionHeader = item.querySelector('.faq-accordion-header')
+
+
+    accordionHeader.addEventListener('click', () => {
+        const openItem = document.querySelector('.accordion-open')
+
+        toggleItem(item)
+
+        if (openItem && openItem !== item) {
+            toggleItem(openItem)
+        }
+
+    })
+})
+
+
+const toggleItem = (item) => {
+    const accordionContent = item.querySelector('.faq-accordion-content')
+
+    if (item.classList.contains('accordion-open')) {
+        accordionContent.removeAttribute('style')
+        item.classList.remove('accordion-open')
+    } else {
+        accordionContent.style.height = accordionContent.scrollHeight + 'px'
+        item.classList.add('accordion-open')
+    }
+
+}
+
+/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll('section[id]')
+
+const scrollActive = () => {
+    const scrollDown = window.scrollY
+
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight,
+            sectionTop = current.offsetTop - 58,
+            sectionId = current.getAttribute('id'),
+            sectionsClass = document.querySelector('.nav-menu a[href*=' + sectionId + ']')
+
+        if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
+            sectionsClass.classList.add('active-link')
+        } else {
+            sectionsClass.classList.remove('active-link')
+        }
+    })
+}
+
+window.addEventListener('scroll', scrollActive)
+
+
+/*=============== SHOW SCROLL UP ===============*/
+const scrollUp = () => {
+    const scrollUp = document.getElementById('scroll-up')
+    // when the scroll is higher than 350 viewport height, add the show-scroll class to a tag with the scroll-up class
+
+    this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
+        : scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
+
+/*=============== SCROLL REVEAL ANIMATION ===============*/
+
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 300,
+    // reset: true, // Animations repeat
+})
+
+sr.reveal(`.home-data, .about-container, .footer-container, .testimonials, .blog, .portfolio-container`)
+sr.reveal(`.home-images, .trusted-container, .faq-accordion`, { delay: 700, distance: '100px', origin: 'right' })
+sr.reveal(`.faq-article, .contact-container`, { delay: 700, distance: '100px', origin: 'left' })
+sr.reveal(`.services-container`, { delay: 1000, distance: '100px', origin: 'bottom' })
+// sr.reveal(`.home-ingredient`, { delay: 2000, interval: 100 })
+sr.reveal(`.about-data, .recipe-list, .contact-data`, { origin: 'right' })
+sr.reveal(`.about-img, .recipe-img, .contact-image`, { origin: 'left' })
+// sr.reveal(`.products-card`, { interval: 100 })
+
+
