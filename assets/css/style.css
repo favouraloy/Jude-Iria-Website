@@ -547,7 +547,8 @@ img {
 
 .logos {
     overflow: hidden;
-    padding: 60px 0;
+    padding: 30px 0;
+    margin: 2rem;
     background: var(--secondary-color2);
     white-space: nowrap;
     position: relative;
@@ -584,6 +585,7 @@ img {
 }
 
 .trusted-company-logos img {
+    max-width: 1120px;
     width: 100%;
     margin: 0 0.8rem;
 }
@@ -601,7 +603,7 @@ img {
 .testimonial-swiper {
     padding: 2rem 0;
     overflow: hidden;
-    margin: 0 40px 25px;
+    /* margin: 0 40px 25px; */
 
 }
 
@@ -614,8 +616,8 @@ img {
 }
 
 .wrapper .testimonial-card {
-    width: 350px;
-    height: auto;
+    width: fit-content;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     background-color: var(--secondary-color2);
@@ -1185,9 +1187,13 @@ img {
         font-size: var(--smaller-font-size);
     }
 
-    /* .testimonial-container :where(.swiper-button-prev, .swiper-button-next) {
-        display: none;
-    } */
+    .logos:before,
+    .logos:after {
+        width: 40px;
+            height: 90%;
+            content: "";
+            z-index: 10;
+    }
 
     .portfolio-button {
         margin-left: 0;
@@ -1221,7 +1227,6 @@ img {
     .build {
         margin-right: 1rem;
     }
-
 
     .blog-cta {
         text-align: center;
