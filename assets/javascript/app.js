@@ -53,11 +53,35 @@ const swiperTestimonial = new Swiper('.testimonial-swiper', {
     spaceBetween: 32,
     GrabCursor: true,
 
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+    },
+
     pagination: {
         el: '.swiper-pagination',
         dynamicBullets: true,
         clickable: true,
     },
+
+    // navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        // 1150: {
+        //     slidesPerView: 3,
+        // }
+    }
 })
 
 
@@ -81,6 +105,10 @@ accordionItems.forEach((item) => {
     })
 })
 
+/*=============== LOGO CAROUSEL DUPLICATE ===============*/
+
+// var copy = document.querySelector(".trusted-company-logos").cloneNode(true);
+// document.querySelector(".logos").appendChild(copy);
 
 const toggleItem = (item) => {
     const accordionContent = item.querySelector('.faq-accordion-content')
@@ -94,6 +122,63 @@ const toggleItem = (item) => {
     }
 
 }
+
+/*=============== ACTIVATE NUMBER COUNTER ON SCROLL ===============*/
+const counters = document.querySelectorAll(".counters h1")
+const container = document.querySelector(".counters")
+
+// variable that tracks if counter has been activated
+let activated = false
+
+// add scroll event to page
+window.addEventListener("scroll", () => {
+    if (
+        pageYOffset > container.offsetTop - container.offsetHeight - 200
+        && activated === false
+    ) {
+        counters.forEach(counter => {
+            counter.innerText = 0
+            //set count variable to track the count 
+            let count = 0
+
+            // update count function 
+            function updateCount() {
+                const target = parseInt(counter.dataset.count)
+                // as long as the count is below the target number
+                if (count < target) {
+                    // increment the count
+                    count++
+                    // set the counter text to the count
+                    counter.innerText = count
+                    // repeat this every 10 miliseconds
+                    setTimeout(updateCount, 10)
+                } else {
+                    // set the counter counter text to the target number
+                    counter.innerText = target
+                }
+            }
+            // run the count function initially
+            updateCount()
+            // set activated to true
+            activated = true
+        })
+        // if the page is scrolled back a certain amount or to the top
+        // and activated is true  
+    } else if (
+        pageYOffset < container.offsetTop - container.offsetHeight - 500
+        || pageYOffset === 0
+        && activated === true
+    ) {
+        // select all counters
+        counters.forEach(counter => {
+            // set counter text back to zero
+            counter.innerText = 0
+        })
+        // set activated to false
+        activated = false
+    }
+})
+
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll('section[id]')
@@ -138,13 +223,13 @@ const sr = ScrollReveal({
     // reset: true, // Animations repeat
 })
 
-sr.reveal(`.home-data, .about-container, .footer-container, .testimonials, .blog, .portfolio-container`)
-sr.reveal(`.home-images, .trusted-container, .faq-accordion`, { delay: 700, distance: '100px', origin: 'right' })
-sr.reveal(`.faq-article, .contact-container`, { delay: 700, distance: '100px', origin: 'left' })
-sr.reveal(`.services-container`, { delay: 1000, distance: '100px', origin: 'bottom' })
-// sr.reveal(`.home-ingredient`, { delay: 2000, interval: 100 })
-sr.reveal(`.about-data, .recipe-list, .contact-data`, { origin: 'right' })
-sr.reveal(`.about-img, .recipe-img, .contact-image`, { origin: 'left' })
-// sr.reveal(`.products-card`, { interval: 100 })
+// sr.reveal(`.home-data, .about-container, .footer-container, .testimonials, .blog, .portfolio-container`)
+// sr.reveal(`.home-images, .trusted-container, .faq-accordion`, { delay: 700, distance: '100px', origin: 'right' })
+// sr.reveal(`.faq-article, .contact-container`, { delay: 700, distance: '100px', origin: 'left' })
+// sr.reveal(`.services-container`, { delay: 1000, distance: '100px', origin: 'bottom' })
+// // sr.reveal(`.home-ingredient`, { delay: 2000, interval: 100 })
+// sr.reveal(`.about-data, .recipe-list, .contact-data`, { origin: 'right' })
+// sr.reveal(`.about-img, .recipe-img, .contact-image`, { origin: 'left' })
+// // sr.reveal(`.products-card`, { interval: 100 })
 
 
