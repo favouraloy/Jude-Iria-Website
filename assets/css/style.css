@@ -140,7 +140,7 @@ img {
     width: 100%;
     top: 0;
     left: 0;
-    background-color: var(--primary-color2);
+    background-color: var(--secondary-color1);
     transition: box-shadow 0.4s;
     z-index: 100;
 }
@@ -222,7 +222,7 @@ img {
 
 /* Show menu */
 .show-menu {
-    background-color: var(--primary-color2);
+    background-color: var(--secondary-color1);
     top: 0%;
 }
 
@@ -708,6 +708,7 @@ img {
     }
 
     .logo-slide img {
+        width: 200px;
         max-width: 80px;
         max-height: 35px;
     }

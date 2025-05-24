@@ -78,9 +78,6 @@ const swiperTestimonial = new Swiper('.testimonial-swiper', {
         768: {
             slidesPerView: 2,
         },
-        // 1150: {
-        //     slidesPerView: 3,
-        // }
     }
 })
 
@@ -104,11 +101,6 @@ accordionItems.forEach((item) => {
 
     })
 })
-
-/*=============== LOGO CAROUSEL DUPLICATE ===============*/
-
-// var copy = document.querySelector(".trusted-company-logos").cloneNode(true);
-// document.querySelector(".logos").appendChild(copy);
 
 const toggleItem = (item) => {
     const accordionContent = item.querySelector('.faq-accordion-content')
@@ -218,18 +210,18 @@ window.addEventListener('scroll', scrollUp)
 const sr = ScrollReveal({
     origin: 'top',
     distance: '60px',
-    duration: 2500,
-    delay: 300,
+    duration: 1500,
+    delay: 200,
     // reset: true, // Animations repeat
 })
 
-// sr.reveal(`.home-data, .about-container, .footer-container, .testimonials, .blog, .portfolio-container`)
-// sr.reveal(`.home-images, .trusted-container, .faq-accordion`, { delay: 700, distance: '100px', origin: 'right' })
-// sr.reveal(`.faq-article, .contact-container`, { delay: 700, distance: '100px', origin: 'left' })
-// sr.reveal(`.services-container`, { delay: 1000, distance: '100px', origin: 'bottom' })
-// // sr.reveal(`.home-ingredient`, { delay: 2000, interval: 100 })
-// sr.reveal(`.about-data, .recipe-list, .contact-data`, { origin: 'right' })
-// sr.reveal(`.about-img, .recipe-img, .contact-image`, { origin: 'left' })
-// // sr.reveal(`.products-card`, { interval: 100 })
+sr.reveal(`.home-data, .about-container, .footer-container, .testimonials, .blog, .portfolio-container`)
+sr.reveal(`.home-images, .trusted-container, .faq-accordion`, { delay: 300, distance: '100px', origin: 'right' })
+sr.reveal(`.faq-article, .contact-container`, { delay: 300, distance: '100px', origin: 'left' })
+sr.reveal(`.services-container`, { delay: 400, distance: '100px', origin: 'bottom' })
+// sr.reveal(`.home-ingredient`, { delay: 2000, interval: 100 })
+sr.reveal(`.about-data, .recipe-list, .contact-data`, { origin: 'right' })
+sr.reveal(`.about-img, .recipe-img, .contact-image`, { origin: 'left' })
+// sr.reveal(`.products-card`, { interval: 100 })
 
 
