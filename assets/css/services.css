@@ -82,6 +82,14 @@
 
 .contact {
     background-color: var(--secondary-color2);
+    margin-top: 3rem;
+}
+
+.section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-page-card-container,
