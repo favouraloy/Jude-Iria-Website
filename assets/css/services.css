@@ -10,12 +10,16 @@
 }
 
 
-.services-page-container {
-    justify-items: center;
+.services-page-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
 }
 
 .services-page-card-article {
-    width: 350px;
+    width: 280px;
     height: auto;
     padding: 1rem;
     margin: 2rem;
@@ -104,7 +108,7 @@
 
 
 .contact-page-card {
-    width: 220px;
+    width: 240px;
     height: auto;
     background-color: var(--primary-color3);
     padding: 2rem;
@@ -149,6 +153,9 @@
     justify-items: center;
 }
 
+.contact-page-card address {
+    text-align: center;
+}
 
 .contact-page-card:hover {
     transform: translateY(-0.3rem);
@@ -238,6 +245,10 @@
     .services-page-card-container {
         display: grid;
         grid-template-columns: repeat(2, max-content);
+    }
+
+    .services-page-card-article {
+        width: 350px;
     }
 
     .work-cta-container {

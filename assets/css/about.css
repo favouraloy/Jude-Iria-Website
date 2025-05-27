@@ -53,7 +53,7 @@
 }
 
 .about-mission-images img {
-    width: 350px;
+    width: 280px;
     border-radius: 2rem;
     margin-top: 2rem;
     border: 2px solid var(--secondary-color1);
@@ -65,7 +65,7 @@
 }
 
 .about-companies-card {
-    width: 350px;
+    width: 250px;
     height: auto;
     margin: 2rem 0;
     background-color: var(--primary-color3);
@@ -199,10 +199,16 @@
     .about-metrics-title {
         text-align: center;
     }
+
+
 }
 
 /* For medium devices */
-/* @media screen and (min-width: 576px) {} */
+/* @media screen and (min-width: 576px) {
+    .about-companies-card {
+        width: 350px;
+    }
+} */
 
 @media screen and (min-width: 768px) {
 
@@ -233,6 +239,10 @@
         margin-right: 3rem;
     }
 
+    .about-mission-images img {
+        width: 320px;
+    }
+
     .about-mission-images {
         order: -1;
     }
@@ -242,6 +252,10 @@
         display: grid;
         grid-template-columns: repeat(2, 350px);
         gap: 3rem;
+    }
+
+    .about-companies-card {
+        width: 350px;
     }
 
     .about-metrics-data {
