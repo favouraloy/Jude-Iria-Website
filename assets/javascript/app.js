@@ -219,9 +219,9 @@ sr.reveal(`.home-data, .about-container, .footer-container, .testimonials, .blog
 sr.reveal(`.home-images, .trusted-container, .faq-accordion`, { delay: 300, distance: '100px', origin: 'right' })
 sr.reveal(`.faq-article, .contact-container`, { delay: 300, distance: '100px', origin: 'left' })
 sr.reveal(`.services-container`, { delay: 400, distance: '100px', origin: 'bottom' })
-// sr.reveal(`.home-ingredient`, { delay: 2000, interval: 100 })
-sr.reveal(`.about-data, .recipe-list, .contact-data`, { origin: 'right' })
-sr.reveal(`.about-img, .recipe-img, .contact-image`, { origin: 'left' })
-// sr.reveal(`.products-card`, { interval: 100 })
+sr.reveal(`.home-ingredient`, { delay: 2000, interval: 100 })
+sr.reveal(`.about-data, .recipe-list, .contact-data, .section3`, { origin: 'right' })
+sr.reveal(`.about-img, .about-heading, .about-mission, .services, .contact, .about-metrics, .about-testimonials, .contact-image`, { origin: 'left' })
+sr.reveal(`.about-companies, .section-5, .section-2, .section2`, { interval: 100 })
 
 

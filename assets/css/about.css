@@ -1,0 +1,294 @@
+.about-page {
+    background-color: var(--secondary-color2);
+}
+
+.section-2 {
+    background-color: #ffff;
+}
+
+.section-4 {
+    padding: 3rem 0;
+    background-color: #ffff;
+}
+
+
+.about-heading {
+    text-align: center;
+    margin: 0 3rem;
+}
+
+.about-section-title {
+    font-size: 1.5rem;
+    font-weight: var(--font-semi-bold);
+    padding-bottom: 1.5rem;
+}
+
+.about-data-container,
+.about-mission-container {
+    display: grid;
+    place-items: center;
+}
+
+.about-data,
+.about-mission {
+    padding: 1rem;
+    justify-items: center;
+}
+
+.about-data-images img {
+    width: 350px;
+    border-radius: 2rem;
+    border: 2px solid var(--secondary-color1);
+}
+
+.about-mission {
+    padding: 1rem;
+    padding: 3rem 0;
+    line-height: 1.7;
+    justify-items: center;
+}
+
+.about-mission-description {
+    padding: 0 2rem
+}
+
+.about-mission-images img {
+    width: 350px;
+    border-radius: 2rem;
+    margin-top: 2rem;
+    border: 2px solid var(--secondary-color1);
+}
+
+.about-companies {
+    padding: 2rem;
+    justify-items: center;
+}
+
+.about-companies-card {
+    width: 350px;
+    height: auto;
+    margin: 2rem 0;
+    background-color: var(--primary-color3);
+    padding: 1.5rem;
+    text-align: initial;
+    border-radius: 2rem;
+    box-shadow: 0 4px 16px hsla(353, 100%, 8%, 0.2);
+    transition: transform 0.3s ease-in;
+}
+
+.about-companies-card:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 4px 16px hsla(353, 100%, 8%, 0.5);
+}
+
+
+.about-card-image img {
+    width: 150px;
+    display: block;
+    justify-self: center;
+}
+
+.about-metrics {
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+    justify-items: center;
+}
+
+.about-metrics-list {
+    padding: 0 1rem;
+    list-style: circle;
+}
+
+.about-metrics-list-items {
+    margin: 1rem 0;
+}
+
+.about-testimonials {
+    justify-items: center;
+    padding: 0 2rem;
+}
+
+.about-testimonials-card {
+    width: 300px;
+    height: auto;
+    margin: 2rem 0;
+    background-color: var(--secondary-color2);
+    padding: 1.5rem;
+    text-align: initial;
+    border-radius: 2rem;
+    box-shadow: 0 4px 16px hsla(353, 100%, 8%, 0.2);
+    transition: transform 0.3s ease-in;
+}
+
+.about-testimonials-card img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--secondary-color1);
+    justify-self: center;
+}
+
+.about-testimonials-card-content {
+    line-height: 1.5;
+    padding: 1rem 0;
+    justify-self: center;
+}
+
+.about-testimonials-name {
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.about-testimonials-card:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 4px 16px hsla(353, 100%, 8%, 0.5);
+}
+
+.about-testimonials-link {
+    text-align: center;
+    color: var(--secondary-color1);
+}
+
+.about-testimonials-link:hover {
+    text-decoration: underline;
+}
+
+.about-portfolio {
+    padding: 2rem;
+    justify-items: center;
+}
+
+.about-portfolio-description {
+    padding-bottom: 2rem;
+}
+
+.facts-cta-container {
+    margin-bottom: 3rem;
+}
+
+.about-facts {
+    justify-items: center;
+}
+
+.about-facts-list {
+    padding: 0 1rem;
+    list-style: circle;
+}
+
+.about-facts-list-items {
+    margin: 1rem 1.4rem;
+}
+
+.about-call-to-action {
+    padding: 2rem;
+    text-align: center;
+    justify-items: center;
+
+}
+
+.about-cta-description {
+    padding-bottom: 1.5rem;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (min-width: 320px) {
+
+    .about-companies-title,
+    .about-metrics-title {
+        text-align: center;
+    }
+}
+
+/* For medium devices */
+/* @media screen and (min-width: 576px) {} */
+
+@media screen and (min-width: 768px) {
+
+    .about-mission-description,
+    .about-info,
+    .about-metrics-list,
+    .about-portfolio-description {
+        padding: 0 7rem;
+    }
+
+    .about-portfolio-description {
+        margin-bottom: 1rem;
+    }
+}
+
+/* For large devices */
+@media screen and (min-width: 1150px) {
+
+    .about-data-container,
+    .about-mission-container {
+        display: grid;
+        margin-top: 2rem;
+        grid-template-columns: repeat(2, 550px);
+    }
+
+    .about-mission-description {
+        padding: 0;
+        margin-right: 3rem;
+    }
+
+    .about-mission-images {
+        order: -1;
+    }
+
+
+    .about-companies-card-container {
+        display: grid;
+        grid-template-columns: repeat(2, 350px);
+        gap: 3rem;
+    }
+
+    .about-metrics-data {
+        display: flex;
+    }
+
+    .home-value-about {
+        margin-left: 5rem;
+    }
+
+    .about-metrics-data {
+        order: 1;
+    }
+
+    .about-testimonials-card-container {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    .about-portfolio {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        /* justify-content: space-evenly; */
+    }
+
+    .about-portfolio-data {
+        display: flex;
+        padding: 0 2rem;
+    }
+
+    .about-portfolio-description {
+        padding: 0 2rem;
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .about-portfolio-link {
+        margin-top: 2rem;
+    }
+
+    .facts-cta-container {
+        margin-top: 3rem;
+        display: flex;
+    }
+
+    .about-call-to-action {
+        padding: 0 1rem;
+    }
+
+}
