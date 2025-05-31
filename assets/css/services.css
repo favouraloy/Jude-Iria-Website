@@ -189,6 +189,25 @@
     padding: 2rem 0;
 }
 
+.contact-form {
+    position: relative;
+}
+
+.contact-message {
+    font-size: 0.9rem;
+    position: absolute;
+    bottom: 8.7rem;
+    left: 1.5rem;
+}
+
+/* Status color */
+.color-red {
+    color: hsl(4, 71%, 50%);
+}
+
+.color-blue {
+    color: hsl(207, 56%, 45%);
+}
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */

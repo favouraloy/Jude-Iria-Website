@@ -132,13 +132,13 @@
                     <div class="contact-group grid">
 
                         <div class="contact-box">
-                            <input type="text" name="user-name" id="name" required placeholder="Please enter name..."
-                                class="contact-input contact-page-input">
+                            <input type="text" name="user-name" id="contact-name" required
+                                placeholder="Please enter name..." class="contact-input contact-page-input">
                             <label for="name" class="contact-label contact-page-label">Full Name </label>
                         </div>
 
                         <div class="contact-box">
-                            <input type="email" name="user-email" id="email" required
+                            <input type="email" name="user-email" id="contact-email" required
                                 placeholder="Please enter email..." class="contact-input contact-page-input">
                             <label for="email" class="contact-label contact-page-label"> Email Adress</label>
                         </div>
@@ -157,19 +157,21 @@
                         </div>
                     </div>
 
-                    <div class="contact-box">
-                        <select name="Select" id="select" class="contact-input contact-box" required>
-                            <option value="1" class="value">Strategy Session</option>
-                            <option value="2" class="value">Funnel Build</option>
-                            <option value="3" class="value">Automation Setup</option>
-                            <option value="4" class="value">Website Creation</option>
-                            <option value="5" class="value">Business Coaching</option>
-                            <option value="6" class="value">Others</option>
+                    <div class="contact-box" id="contact-box">
+                        <select name="user-choice" id="select" class="contact-input contact-box" required>
+                            <option value="" class="value" id="option" disabled selected>Please select a topic</option>
+                            <option value="Strategy-session" class="value" id="option">Strategy Session</option>
+                            <option value="Funnel Build" class="value" id="option">Funnel Build</option>
+                            <option value="Automation Setup" class="value" id="option">Automation Setup</option>
+                            <option value="Website Creation" class="value" id="option">Website Creation</option>
+                            <option value="Business Coaching" class="value" id="option">Business Coaching</option>
+                            <option value="Others" class="value" id="option">Others</option>
                         </select>
                         <label for="options" class="contact-label contact-page-label">What Can I help You With</label>
                     </div>
                     <div class="contact-box contact-area">
-                        <textarea name="user-message" id="message" required placeholder="Please type your message..."
+                        <textarea name="user-message" id="contact-project" required
+                            placeholder="Please type your message..."
                             class="contact-input contact-page-input"></textarea>
                         <label for="message" class="contact-label contact-page-label">Brief Message </label>
                     </div>
@@ -198,11 +200,9 @@
             <div class="contact-page-cta">
                 <h2 class="contact-cta-title section-title">Looking to explore more before reaching out?</h2>
 
-                <a href="assets/images/Jude lria's Resumé.pdf" class="button contact-cta-button" download=""> [Download
-                    My Full CV
-                    Here]</a>
-                <a href="about.html" class="button contact-cta-button">[Read More About Me]</a>
-                <a href="index.html" class="button contact-cta-button">[Return to Home]</a>
+                <a href="assets/images/Jude lria's Resumé.pdf" class="button contact-cta-button" download=""> Download My Full CV Here</a>
+                <a href="about.html" class="button contact-cta-button">Read More About Me</a>
+                <a href="index.html" class="button contact-cta-button">Return to Home</a>
             </div>
             <!-- </div> -->
         </section>
@@ -297,6 +297,13 @@
     <a href="#" class="scrollup" id="scroll-up">
         <i class="ri-arrow-up-line"></i>
     </a>
+
+    <!--=============== EMAIL JS ===============-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
+    <!--=============== CONTACT JS ===============-->
+    <script src="assets/javascript/contact.js"></script>
 
     <!--=============== SCROLL JS ===============-->
     <script src="assets/javascript/scrollreveal.min.js"></script>
