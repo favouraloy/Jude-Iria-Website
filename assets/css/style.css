@@ -1061,8 +1061,8 @@ img {
 
 .contact-message {
     position: absolute;
-    bottom: -2rem;
-    left: 0;
+    bottom: 4.5rem;
+    left: 1rem;
     font-size: var(--small-font-size);
     font-weight: var(--font-semi-bold);
     color: var(--title-color);

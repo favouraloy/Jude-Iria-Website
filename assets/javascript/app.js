@@ -219,9 +219,45 @@ sr.reveal(`.home-data, .about-container, .footer-container, .testimonials, .blog
 sr.reveal(`.home-images, .trusted-container, .faq-accordion`, { delay: 300, distance: '100px', origin: 'right' })
 sr.reveal(`.faq-article, .contact-container`, { delay: 300, distance: '100px', origin: 'left' })
 sr.reveal(`.services-container`, { delay: 400, distance: '100px', origin: 'bottom' })
-sr.reveal(`.home-ingredient`, { delay: 2000, interval: 100 })
+// sr.reveal(`.home-ingredient`, { delay: 2000, interval: 100 })
 sr.reveal(`.about-data, .recipe-list, .contact-data, .section3`, { origin: 'right' })
 sr.reveal(`.about-img, .about-heading, .about-mission, .services, .contact, .about-metrics, .about-testimonials, .contact-image`, { origin: 'left' })
 sr.reveal(`.about-companies, .section-5, .section-2, .section2`, { interval: 100 })
 
+/*=============== EMAIL JS ===============*/
 
+const contactForm = document.getElementById('contact-form'),
+    contactMessage = document.getElementById('contact-message')
+
+
+
+
+const sendEmail = (e) => {
+    e.preventDefault()
+
+                        // serviceID -         templateID -       #form -           publicKey
+    emailjs.sendForm('service_dfyi84i', 'template_izdns4a', '#contact-form', 'JVFLsSLy8Tm8fcJ2T')
+        .then(() => {
+            // Show sent message
+            contactMessage.textContent = 'Message sent successfully ✅'
+
+            // Remove message after five seconds
+            setTimeout(() => {
+                contactMessage.textContent = ''
+            }, 5000)
+
+            // clear input fields
+            contactForm.reset()
+        }, () => {
+            // show error message maybe due to poor service
+            contactMessage.textContent = 'message not sent (service error) ❌'
+
+            // Remove message after five seconds
+            setTimeout(() => {
+                contactMessage.textContent = ''
+            }, 5000)
+        })
+
+}
+
+contactForm.addEventListener('submit', sendEmail)
