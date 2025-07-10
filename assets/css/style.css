@@ -1262,6 +1262,15 @@ img {
     padding: 1rem;
 }
 
+.copy-link {
+    color: #e5e7eb;
+}
+
+.copy-link:hover {
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: underline;
+}
 
 /*=============== SCROLL UP ===============*/
 .scrollup {
